@@ -14,6 +14,20 @@
     "*.ts": "tslint"
   },
   "pre-commit": "lint-staged",
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "chore"
+    ],
+    "scope": "\\S+.*"
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-bootstrapper": "^2.1.1",
@@ -31,6 +45,7 @@
     "aurelia-tools": "^1.0.0",
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.13.0",
+    "commitplease": "^2.7.10",
     "connect-history-api-fallback": "^1.2.0",
     "debounce": "^1.0.2",
     "event-stream": "^3.3.3",
