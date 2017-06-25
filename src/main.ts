@@ -1,4 +1,4 @@
-import {Aurelia} from 'aurelia-framework'
+import {Aurelia} from 'aurelia-framework';
 import environment from './environment';
 
 export function configure(aurelia: Aurelia) {
