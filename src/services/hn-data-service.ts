@@ -22,5 +22,5 @@ export default class HackerNewsDataService {
 
   public getItem(id: number) {
     return this.http.fetch(`item/${id}`).then(response => response.json());
-  }  
+  }
 }

@@ -7,8 +7,8 @@ export class ItemNavCustomElement {
 
   @bindable()
   public page: number;
-  
-  @bindable()  
+
+  @bindable()
   public lastPage: boolean;
 
   @computedFrom('type', 'page', 'lastPage')
@@ -17,14 +17,14 @@ export class ItemNavCustomElement {
       return '';
     }
     return `/${this.type}/${this.page + 1}`;
-  } 
+  }
 
   @computedFrom('type', 'page')
   public get prev() {
     if (this.page === 1) {
       return '';
     }
-    return `/${this.type}/${this.page - 1}`
+    return `/${this.type}/${this.page - 1}`;
   }
 
 }
