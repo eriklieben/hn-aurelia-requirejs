@@ -9,7 +9,9 @@
   "scripts": {
     "lint-staged": "lint-staged",
     "tslint": "tslint --exclude 'aurelia_project/**/*.ts' --project tsconfig.json",
-    "changelog": "node ./node_modules/conventional-changelog-cli/cli.js -p angular -i CHANGELOG.md -s"
+    "changelog": "node ./node_modules/conventional-changelog-cli/cli.js -p angular -i CHANGELOG.md -s",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "lint-staged": {
     "*.ts": "tslint"
@@ -29,19 +31,45 @@
     ],
     "scope": "\\S+.*"
   },
+  "jest": {
+    "transform": {
+      ".ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": ".*\\.spec\\.ts$",
+    "testPathIgnorePatterns": [
+      "test/unit/setup.ts"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/unit/setup.ts",
+    "unmockedModulePathPatterns": [
+      "node_modules/aurelia-polyfills",
+      "node_modules/aurelia-pal-browser"
+    ],
+    "collectCoverageFrom": [
+      "src/**/!(*.spec.ts)"
+    ],
+    "coverageDirectory": "test/unit/coverage",
+    "mapCoverage": true,
+    "bail": true
+  },
   "license": "MIT",
   "dependencies": {
-    "aurelia-bootstrapper": "^2.1.1",
     "aurelia-animator-css": "^1.0.2",
+    "aurelia-bootstrapper": "^2.1.1",
     "bluebird": "^3.4.1",
     "requirejs": "^2.3.2",
-    "text": "github:requirejs/text#latest"
+    "text": "github:requirejs/text#latest",
+    "whatwg-fetch": "^2.0.3"
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@types/jasmine": "^2.2.0",
+    "@types/jest": "^20.0.2",
     "@types/node": "^6.0.45",
     "aurelia-cli": "^0.30.0",
+    "aurelia-pal-nodejs": "^1.0.0-beta.1.0.0",
     "aurelia-testing": "^1.0.0-beta.3.0.1",
     "aurelia-tools": "^1.0.0",
     "autoprefixer": "^6.3.6",
@@ -63,15 +91,12 @@
     "gulp-typescript": "^3.1.4",
     "gulp-watch": "^4.3.11",
     "html-minifier": "^3.2.3",
-    "jasmine-core": "^2.4.1",
-    "karma": "^0.13.22",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-typescript-preprocessor": "^0.2.1",
+    "jest": "^20.0.4",
     "lint-staged": "^4.0.0",
     "minimatch": "^3.0.2",
     "pre-commit": "^1.2.2",
     "through2": "^2.0.1",
+    "ts-jest": "^20.0.6",
     "tslint": "^3.15.1",
     "typescript": ">=1.9.0-dev || ^2.0.0",
     "uglify-js": "^2.6.3",
