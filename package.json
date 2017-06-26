@@ -14,7 +14,7 @@
     "coverage": "jest --coverage"
   },
   "lint-staged": {
-    "*.ts": "tslint"
+    "*.ts": ["tslint", "test"]
   },
   "pre-commit": "lint-staged",
   "commitplease": {
