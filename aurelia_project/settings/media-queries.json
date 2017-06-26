@@ -1,0 +1,9 @@
+{
+  "for-phone-medium-portrait-up": "only screen and (min-width: 320px)",
+  "for-phone-large-portrait-up": "only screen and (min-width: 375px)",
+  "for-phone-only": "only screen and (max-width: 599px)",
+  "for-tablet-portrait-up": "only screen and (min-width: 600px)",
+  "for-tablet-landscape-up": "only screen and (min-width: 900px)",
+  "for-desktop-up": "only screen and (min-width: 1200px)",
+  "for-big-desktop-up": "only screen and (min-width: 1800px)"
+}

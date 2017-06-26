@@ -15,6 +15,7 @@ let build = gulp.series(
     processCSS,
     copyFiles
   ),
+  includeCSSModule,
   writeBundles
 );
 
@@ -36,5 +37,10 @@ function readProjectConfiguration() {
 function writeBundles() {
   return buildCLI.dest();
 }
+
+function includeCSSModule() {
+  return gulp.src('src/**/*.css.json')
+    .pipe(buildCLI.bundle());
+};
 
 export { main as default };

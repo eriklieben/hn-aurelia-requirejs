@@ -4,6 +4,7 @@ import environment from './environment';
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
+    .feature('css-modules')
     .feature('resources');
 
   if (environment.debug) {

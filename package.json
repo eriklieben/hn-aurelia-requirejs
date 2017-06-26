@@ -14,7 +14,10 @@
     "coverage": "jest --coverage"
   },
   "lint-staged": {
-    "*.ts": ["tslint", "test"]
+    "*.ts": [
+      "tslint",
+      "test"
+    ]
   },
   "pre-commit": "lint-staged",
   "commitplease": {
@@ -94,6 +97,8 @@
     "jest": "^20.0.4",
     "lint-staged": "^4.0.0",
     "minimatch": "^3.0.2",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-modules": "^0.8.0",
     "pre-commit": "^1.2.2",
     "through2": "^2.0.1",
     "ts-jest": "^20.0.6",
