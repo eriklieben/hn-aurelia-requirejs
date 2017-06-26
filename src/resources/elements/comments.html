@@ -1,0 +1,7 @@
+<template styles.comments bindable="comments,count">
+  <require from="./comments.css#module"></require>
+  <p styles.comments-header>
+    ${count} comments
+  </p>
+  <comment comments.bind="comments"></comment>
+</template>

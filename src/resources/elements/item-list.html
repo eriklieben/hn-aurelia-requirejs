@@ -1,0 +1,18 @@
+<template bindable="items">
+  <require from="./item-list.css#module"></require>
+  <ul styles.list>
+    <li styles.news-item repeat.for="item of items">
+      <span styles.score>${item.points}</span>
+      <span class="title">
+        <a href.bind="item.url" target="_blank" rel="noopener">${item.title}</a>
+        <span styles.host>&nbsp;(${item.domain})</span>
+      </span>
+      <br>
+      <span styles.meta>
+        <span class="by">by&nbsp;<a href.bind="'/user/' + item.user" class="">${item.user}</a></span>
+        <span class="time">&nbsp;${item.time_ago}</span>
+        <span class="comments-link">&nbsp;|&nbsp;<a href.bind="'/item/' + item.id">${item.comments_count} comments</a></span>
+      </span>
+    </li>
+  </ul>
+</template>

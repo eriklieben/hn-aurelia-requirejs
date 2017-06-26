@@ -1,0 +1,13 @@
+<template bindable="router">
+  <require from="./navbar.css#module"></require>
+  <header styles.header>
+    <nav role="navigation">
+      <ul>
+        <li repeat.for="row of router.navigation">
+          <a styles.link href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </nav>
+    <p styles.build-with>Built with Aurelia.js</p>
+  </header>
+</template>

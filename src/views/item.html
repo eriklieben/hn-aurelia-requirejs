@@ -1,0 +1,21 @@
+<template>
+  <require from="./item.css#module"></require>
+  <main styles.main>
+    <div styles.header>
+      <a href.bind="item.domain" target="_blank">
+        <h1>${item.title}</h1>
+      </a>
+      <span class="host">
+        (${item.domain})
+      </span>
+      <p class="meta">
+        ${item.points} points
+        | by&nbsp;
+        <a href.bind="'/user/' + item.user" class="">${item.user}</a>
+        ${item.time_ago}
+      </p>
+    </div>
+    <comments count.bind="item.comments_count" comments.bind="item.comments"></comments>
+</main>
+
+</template>

@@ -1,0 +1,13 @@
+.comments {
+  background-color: #fff;
+  display: block;
+  margin-top: 10px;
+  padding: 0 2em .5em;
+}
+
+.comments-header {
+  margin: 0;
+  font-size: 1.1em;
+  padding: 1em 0;
+  position: relative;
+}

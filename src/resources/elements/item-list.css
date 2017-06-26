@@ -1,0 +1,39 @@
+.news-item {
+  background-color: #fff;
+  padding: 20px 30px 20px 80px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  line-height: 20px;
+  list-style: none;
+}
+
+.list {
+  padding-left: 0;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: #444;
+}
+
+.host,
+.meta {
+  font-size: .85em;
+  color: #595959;
+}
+
+.meta a {
+  text-decoration: underline;
+}
+
+.score {
+  color: #f60;
+  font-size: 1.1em;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 80px;
+  text-align: center;
+  margin-top: -10px;
+}

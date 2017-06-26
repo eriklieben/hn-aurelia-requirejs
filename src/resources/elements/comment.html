@@ -1,0 +1,21 @@
+<template bindable="comments">
+  <require from="./comment.css#module"></require>
+  <ul styles.comments-list>
+    <li repeat.for="comment of comments">
+      <div class="by">
+        <a href.bind="'/user/' + comment.user" class="">${comment.user}</a> ${comment.time_ago}
+      </div>
+      <div class="text" innerhtml.bind="comment.content">
+      </div>
+      <div if.bind="comment.comments.length" class="${toggle.checked ? $styles.expanded : $styles.collapsed}">
+        <label class="toggle">
+          <span if.bind="toggle.checked">[-]</span>
+          <span if.bind="!toggle.checked">[+]</span>
+          <span if.bind="!toggle.checked">&nbsp;${comment.comments.length} replies collapsed</span>
+          <input ref="toggle" type="checkbox" checked />
+        </label>
+        <comment if.bind="toggle.checked" comments.bind="comment.comments"></comment>
+      </div>
+    </li>
+  </ul>
+</template>
