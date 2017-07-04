@@ -1,0 +1,11 @@
+<template>
+  <require from="./user.css#module"></require>
+  <main styles.main>
+    <h1>User : ${user.id}</h1>
+    <ul class="meta">
+      <li><span class="label">Created:</span> ${user.created | timeAgo }</li>
+      <li><span class="label">Karma:</span> ${user.karma}</li>
+      <li if.bind="user.about" class="about" innerhtml.bind="user.about"></li>
+    </ul>
+  </main>
+</template>

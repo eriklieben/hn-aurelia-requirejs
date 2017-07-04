@@ -1,0 +1,9 @@
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 55px;
+  background-color: #fff;
+  padding: 20px 30px 20px 80px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}

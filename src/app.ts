@@ -11,5 +11,6 @@ export class App {
     config.map(routes);
 
     this.router = router;
+
   }
 }

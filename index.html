@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Aurelia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+<html lang="en">
 
-  <body aurelia-app="main">
-    <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Aurelia HN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body aurelia-app="main">
+  <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+  <noscript>
+    you need JavaScript to see this page, sorry.
+  </noscript>
+</body>
+
 </html>

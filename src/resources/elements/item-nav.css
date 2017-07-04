@@ -2,11 +2,14 @@
   display: block;
   background-color: #fff;
   border-radius: 2px;
-  padding: 15px 30px;
+  padding: 15px 0;
   text-align: center;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-  margin-bottom: 10px;
+  position: fixed;
+  top: 55px;
+  width: 100%;
+  z-index: 1;
 }
 
 .item-list-nav a {
@@ -17,4 +20,5 @@
 
 .item-list-nav :global .disabled {
   color: #ccc;
+  cursor: not-allowed;
 }

@@ -1,7 +1,7 @@
 <template>
   <require from="./items.css#module"></require>
+  <item-nav page.bind="page" type.bind="href" pages.bind="pages"></item-nav>
   <main styles.main>
-    <item-nav page.bind="page" type.bind="href"></item-nav>
     <item-list items.bind="items"></item-list>
   </main>
 </template>

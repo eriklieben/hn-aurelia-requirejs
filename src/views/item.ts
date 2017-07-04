@@ -5,13 +5,32 @@ import DataService from './../services/hn-data-service';
 export class ItemView {
 
   public item: any;
+  public comments: any = [];
 
   constructor(private service: DataService) {
   }
 
-  public activate(params, navigationInstruction) {
-    return this.service.getItem(params.id).then(item => {
-      this.item = item;
+  public async activate(params, navigationInstruction) {
+    this.item = (await this.service.getItem(params.id))[0];
+    this.service.getKids(params.id).then(comments => {
+      for (let comment in comments) {
+        if (comments[comment]) {
+
+          if (!comments[comment].level) {
+            comments[comment].level = 0;
+          } else {
+            comments[comment].level += 1;
+          }
+
+          for (let kid of comments[comment].kids || []) {
+            if (!comments[kid].level) {
+              comments[kid].level = 0;
+            }
+            comments[kid].level += 1;
+          }
+          this.comments.push(comments[comment]);
+        }
+      }
     });
   }
 }

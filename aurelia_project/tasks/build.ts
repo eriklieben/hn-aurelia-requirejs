@@ -5,6 +5,7 @@ import processMarkup from './process-markup';
 import processCSS from './process-css';
 import copyFiles from './copy-files';
 import watch from './watch';
+import serviceWorker from './service-worker';
 import * as project from '../aurelia.json';
 
 let build = gulp.series(
@@ -16,7 +17,8 @@ let build = gulp.series(
     copyFiles
   ),
   includeCSSModule,
-  writeBundles
+  writeBundles,
+  serviceWorker
 );
 
 let main;

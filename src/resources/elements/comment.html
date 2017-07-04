@@ -1,20 +1,11 @@
 <template bindable="comments">
   <require from="./comment.css#module"></require>
   <ul styles.comments-list>
-    <li repeat.for="comment of comments">
+    <li repeat.for="comment of comments" css="margin-left: ${comment.level * 20}px">
       <div class="by">
-        <a href.bind="'/user/' + comment.user" class="">${comment.user}</a> ${comment.time_ago}
+        <a href.bind="'/user/' + comment.by" class="">${comment.by}</a> ${comment.time | timeAgo }
       </div>
-      <div class="text" innerhtml.bind="comment.content">
-      </div>
-      <div if.bind="comment.comments.length" class="${toggle.checked ? $styles.expanded : $styles.collapsed}">
-        <label class="toggle">
-          <span if.bind="toggle.checked">[-]</span>
-          <span if.bind="!toggle.checked">[+]</span>
-          <span if.bind="!toggle.checked">&nbsp;${comment.comments.length} replies collapsed</span>
-          <input ref="toggle" type="checkbox" checked />
-        </label>
-        <comment if.bind="toggle.checked" comments.bind="comment.comments"></comment>
+      <div class="text" innerhtml.bind="comment.text">
       </div>
     </li>
   </ul>

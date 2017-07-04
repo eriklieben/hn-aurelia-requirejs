@@ -9,22 +9,25 @@ export class ItemNavCustomElement {
   public page: number;
 
   @bindable()
-  public lastPage: boolean;
+  public pages: number;
 
-  @computedFrom('type', 'page', 'lastPage')
+  @computedFrom('type', 'page', 'pages')
   public get next() {
-    if (this.lastPage) {
-      return '';
-    }
-    return `/${this.type}/${this.page + 1}`;
+    return `/${this.type}/${ this.canGoNext ? this.page + 1 : this.page}`;
+  }
+
+  @computedFrom('page', 'pages')
+  public get canGoNext() {
+    return this.page < this.pages;
   }
 
   @computedFrom('type', 'page')
   public get prev() {
-    if (this.page === 1) {
-      return '';
-    }
-    return `/${this.type}/${this.page - 1}`;
+    return `/${this.type}/${ this.canGoPrev ? this.page - 1 : this.page}`;
   }
 
+  @computedFrom('page')
+  public get canGoPrev() {
+    return this.page > 1;
+  }
 }

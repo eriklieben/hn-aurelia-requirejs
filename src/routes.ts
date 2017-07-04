@@ -2,7 +2,7 @@ export default [
   {
     route: ['', 'top/:page?'],
     href: 'top',
-    name: 'news',
+    name: 'top',
     moduleId: 'views/items',
     nav: true,
     title: 'Top',
@@ -11,7 +11,7 @@ export default [
   {
     route: 'new/:page?',
     href: 'new',
-    name: 'newest',
+    name: 'new',
     moduleId: 'views/items',
     nav: true,
     title: 'New',
@@ -38,7 +38,7 @@ export default [
   {
     route: 'jobs/:page?',
     href: 'jobs',
-    name: 'jobs',
+    name: 'job',
     moduleId: 'views/items',
     nav: true,
     title: 'Jobs',
@@ -49,5 +49,12 @@ export default [
     name: 'item',
     moduleId: 'views/item',
     nav: false,
-    title: 'Jobs'
+    title: 'Item'
+  },
+  {
+    route: 'user/:id',
+    name: 'user',
+    moduleId: 'views/user',
+    nav: false,
+    title: 'User'
 }];

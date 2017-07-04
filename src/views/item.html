@@ -6,16 +6,16 @@
         <h1>${item.title}</h1>
       </a>
       <span class="host">
-        (${item.domain})
+        (${item.url | urlToDomain })
       </span>
       <p class="meta">
-        ${item.points} points
-        | by&nbsp;
-        <a href.bind="'/user/' + item.user" class="">${item.user}</a>
-        ${item.time_ago}
+        ${item.score} points
+        by&nbsp;
+        <a href.bind="'/user/' + item.by" class="">${item.by}</a>
+        ${item.time | timeAgo }
       </p>
     </div>
-    <comments count.bind="item.comments_count" comments.bind="item.comments"></comments>
+    <comments comments.bind="comments" count.bind="item.descendants"></comments>
 </main>
 
 </template>
