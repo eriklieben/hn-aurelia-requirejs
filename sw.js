@@ -9,14 +9,14 @@ const workboxSW = new self.WorkboxSW();
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "6abcf21c12185e4f26033146756953f7"
+    "revision": "94b205964d4fb049c355dbab4bb61b1c"
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "cf3822e64e21e1167b05353a734960e8"
+    "revision": "932915b19931511516076fcea30aa59e"
   },
   {
     "url": "/scripts/vendor-bundle.js",
-    "revision": "95ba5848a1c8733d48d38ececcf7841b"
+    "revision": "3219d3e0e5c1c986bd84e446cb34f4cb"
   }
 ]);

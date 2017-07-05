@@ -4,7 +4,7 @@
   "name": "HackerNews Aurelia",
   "scope": "/",
   "display": "fullscreen",
-  "start_url": "https://hn-aurelia.eriklieben.com/",
+  "start_url": "/",
   "short_name": "HN-Aurelia",
   "theme_color": "#f60",
   "description": "HackerNews PWA Client build in the Aurelia framework",
@@ -12,5 +12,21 @@
   "background_color": "#ffffff",
   "related_applications": [],
   "prefer_related_applications": false,
-  "icons": []
+  "icons": [{
+    "src": "https://res.cloudinary.com/aurelia/image/upload/w_128,h_128/v1499266334/aurelia-hn.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "https://res.cloudinary.com/aurelia/image/upload/w_152,h_152/v1499266334/aurelia-hn.png",
+    "sizes": "152x152",
+    "type": "image/png"
+  }, {
+    "src": "https://res.cloudinary.com/aurelia/image/upload/w_144,h_144/v1499266334/aurelia-hn.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "https://res.cloudinary.com/aurelia/image/upload/w_192,h_192/v1499266334/aurelia-hn.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
 }
