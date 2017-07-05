@@ -147,6 +147,9 @@
           }
         ]
       }
-    ]
+    ],
+    "copyFiles": {
+      "node_modules/firebase-hackernews/dist/firebase-hackernews-sw.js": "scripts"
+    }
   }
 }
