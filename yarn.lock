@@ -962,6 +962,10 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
+buffer-crc32@~0.2.3:
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz#0d333e3f00eac50aa1454abd30ef8c2a5d9a7242"
+
 buffer-equal-constant-time@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
@@ -2648,7 +2652,7 @@ gulp-typescript@^3.1.4:
     through2 "~2.0.1"
     vinyl-fs "~2.4.3"
 
-gulp-util@^3, gulp-util@^3.0.2, gulp-util@^3.0.7, gulp-util@~3.0.7:
+gulp-util@^3, gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.7, gulp-util@~3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -2685,6 +2689,15 @@ gulp-watch@^4.3.11:
     slash "^1.0.0"
     vinyl "^1.2.0"
     vinyl-file "^2.0.0"
+
+gulp-zip@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-zip/-/gulp-zip-4.0.0.tgz#1cefc08b4bf36df4b5b1e7c6b36ee55ebbe4a881"
+  dependencies:
+    get-stream "^3.0.0"
+    gulp-util "^3.0.0"
+    through2 "^2.0.1"
+    yazl "^2.1.0"
 
 "gulp@github:gulpjs/gulp#4.0":
   version "4.0.0-alpha.2"
@@ -6900,6 +6913,12 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
+
+yazl@^2.1.0:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/yazl/-/yazl-2.4.2.tgz#14cb19083e1e25a70092c1588aabe0f4e4dd4d88"
+  dependencies:
+    buffer-crc32 "~0.2.3"
 
 yeast@0.1.2:
   version "0.1.2"
