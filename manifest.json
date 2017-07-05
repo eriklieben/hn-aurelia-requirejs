@@ -25,6 +25,10 @@
     "sizes": "144x144",
     "type": "image/png"
   }, {
+    "src": "https://res.cloudinary.com/aurelia/image/upload/v1499266334/aurelia-hn.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }, {
     "src": "https://res.cloudinary.com/aurelia/image/upload/w_192,h_192/v1499266334/aurelia-hn.png",
     "sizes": "192x192",
     "type": "image/png"
