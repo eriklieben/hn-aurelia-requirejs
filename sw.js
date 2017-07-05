@@ -13,7 +13,7 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "711d40f64a11c7f82a7b0a1c5b562e13"
+    "revision": "4a7da9cad1161d7b2eaab9e0a5815368"
   },
   {
     "url": "/scripts/firebase-hackernews-sw.js",
@@ -21,6 +21,6 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/vendor-bundle.js",
-    "revision": "3219d3e0e5c1c986bd84e446cb34f4cb"
+    "revision": "e03f220a9a37d4e572f3a787f246ac87"
   }
 ]);

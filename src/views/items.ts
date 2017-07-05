@@ -8,6 +8,7 @@ export class TopView {
   public pages: number = 1;
   public href: string;
   public type: string = '';
+  public loading = false;
 
   constructor(private service: DataService) {
   }
@@ -17,9 +18,11 @@ export class TopView {
     this.href = navigationInstruction.href;
     this.page = (params.page) ? Number.parseInt(params.page, 10) : 1;
 
-    return this.service.getItems(this.type, this.page).then(result => {
+    this.loading = true;
+    this.service.getItems(this.type, this.page).then(result => {
       this.items = result.items;
       this.pages = result.totalPages;
+      this.loading = false;
     });
   }
 }
