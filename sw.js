@@ -9,11 +9,11 @@ const workboxSW = new self.WorkboxSW();
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "612c8728521a650c34b9d3b036d012f2"
+    "revision": "159b5a6f51bcbf0292754df342d1a1c4"
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "83d266455a5abb6033ed75697ac929b3"
+    "revision": "711d40f64a11c7f82a7b0a1c5b562e13"
   },
   {
     "url": "/scripts/firebase-hackernews-sw.js",
@@ -21,6 +21,6 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/vendor-bundle.js",
-    "revision": "917798c09887bd1c0d356e22c5b98f24"
+    "revision": "3219d3e0e5c1c986bd84e446cb34f4cb"
   }
 ]);
