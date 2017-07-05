@@ -9,7 +9,7 @@ const workboxSW = new self.WorkboxSW();
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "159b5a6f51bcbf0292754df342d1a1c4"
+    "revision": "69de1075cfe17e2eeca0506493dc685c"
   },
   {
     "url": "/scripts/app-bundle.js",

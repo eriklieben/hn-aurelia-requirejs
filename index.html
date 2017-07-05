@@ -92,13 +92,15 @@
     </div>
   </section>
 
-
-  <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
   <script type="text/javascript">
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          var scriptElement = document.createElement('script');
+          scriptElement.setAttribute('data-main', 'aurelia-bootstrapper');
+          scriptElement.src = "scripts/vendor-bundle.js";
+          document.body.appendChild(scriptElement);
         }, function(err) {
           console.log('ServiceWorker registration failed: ', err);
         });
