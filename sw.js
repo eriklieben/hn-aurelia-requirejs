@@ -3,17 +3,17 @@ importScripts('scripts/firebase-app.js')
 importScripts('scripts/firebase-database.js')
 importScripts('scripts/firebase-hackernews-sw.js')
 
-hackernews.init(firebase, { watch: true });
+hackernews.init(firebase, { watch: true, log: console.log });
 
 const workboxSW = new self.WorkboxSW();
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "724d995f43aeb1c5527e64eeb365e11c"
+    "revision": "b19b4149d3b83461622d4788480b3be6"
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "c3ad8acdab535bbb5a441f5a4eebbd11"
+    "revision": "50c6c6c4b41dc05a1aeecc9dd4416640"
   },
   {
     "url": "/scripts/firebase-app.js",
@@ -29,7 +29,7 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/vendor-bundle.js",
-    "revision": "18ba006d3317efbe2b7824f957104cd0"
+    "revision": "e3c8f46d64a24064e7218e3abca9e460"
   }
 ]);
 

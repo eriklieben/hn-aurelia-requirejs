@@ -54,3 +54,8 @@
 .link :global .active {
   font-weight: 400;
 }
+
+.active {
+  font-weight: bold;
+  color:green;
+}

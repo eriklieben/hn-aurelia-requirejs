@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
   <link rel="manifest" href="/manifest.json">
+  <link rel="dns-prefetch" href="https://res.cloudinary.com">
+  <link rel="dns-prefetch" href="https://hacker-news.firebaseio.com">
+  <link rel="canonical" href="https://aurelia-hn.azureedge.net/">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/aurelia/image/upload/w_64,h_64/v1499266334/aurelia-hn.png" />
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="mobile-web-app-capable" content="yes">
@@ -19,7 +22,6 @@
   <meta name="msapplication-TileImage" content="https://res.cloudinary.com/aurelia/image/upload/w_144,h_144/v1499266334/aurelia-hn.png">
   <meta name="msapplication-TileColor" content="#f60">
   <meta name="theme-color" content="#f60">
-  <link rel="dns-prefetch" href="https://res.cloudinary.com/">
 </head>
 
 <body aurelia-app="main">
@@ -100,15 +102,18 @@
   <script type="text/javascript">
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          var scriptElement = document.createElement('script');
-          scriptElement.setAttribute('data-main', 'aurelia-bootstrapper');
-          scriptElement.src = "scripts/vendor-bundle.js";
-          document.body.appendChild(scriptElement);
-        }, function(err) {
-          console.log('ServiceWorker registration failed: ', err);
-        });
+        navigator.serviceWorker.register('/sw.js').then(function() {
+            return navigator.serviceWorker.ready;
+          })
+          .then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            var scriptElement = document.createElement('script');
+            scriptElement.setAttribute('data-main', 'aurelia-bootstrapper');
+            scriptElement.src = "scripts/vendor-bundle.js";
+            document.body.appendChild(scriptElement);
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
       });
     }
   </script>
