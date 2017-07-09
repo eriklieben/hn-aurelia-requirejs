@@ -13,7 +13,7 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "4a7da9cad1161d7b2eaab9e0a5815368"
+    "revision": "336f55d376a76426397575c9c2ec94c0"
   },
   {
     "url": "/scripts/firebase-hackernews-sw.js",
@@ -21,6 +21,19 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/vendor-bundle.js",
-    "revision": "e03f220a9a37d4e572f3a787f246ac87"
+    "revision": "3219d3e0e5c1c986bd84e446cb34f4cb"
   }
 ]);
+
+workboxSW.router.registerNavigationRoute('/index.html');
+
+workboxSW.router.registerRoute(
+  new RegExp('^https://res.cloudinary.com/'),
+  workboxSW.strategies.cacheFirst({
+    cacheName: 'images',
+    cacheExpiration: { maxEntries: 15 },
+    // The images are returned as opaque responses, with a status of 0.
+    // Normally these wouldn't be cached; here we opt-in to caching them.
+    cacheableResponse: { statuses: [0] }
+  })
+);

@@ -8,7 +8,7 @@ hackernews.init(firebase, { watch: true });
 const workboxSW = new self.WorkboxSW();
 workboxSW.precache([]);
 
-workboxSW.router.registerNavigationRoute('/');
+workboxSW.router.registerNavigationRoute('/index.html');
 
 workboxSW.router.registerRoute(
   new RegExp('^https://res.cloudinary.com/'),
