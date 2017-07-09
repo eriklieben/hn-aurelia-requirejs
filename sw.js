@@ -13,7 +13,7 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "1231dc76c4fae83d45b8074f93483292"
+    "revision": "c3ad8acdab535bbb5a441f5a4eebbd11"
   },
   {
     "url": "/scripts/firebase-app.js",
@@ -29,7 +29,7 @@ workboxSW.precache([
   },
   {
     "url": "/scripts/vendor-bundle.js",
-    "revision": "e52b9dbfb1d65ac218759b2027d9dc6e"
+    "revision": "18ba006d3317efbe2b7824f957104cd0"
   }
 ]);
 

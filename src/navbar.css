@@ -24,6 +24,9 @@
   float: right;
   padding-right: 2rem;
   z-index: 3;
+  @media (--for-phone-only) {
+    display: none;
+  }
 }
 
 .build-with a,
