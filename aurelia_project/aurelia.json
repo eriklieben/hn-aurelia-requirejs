@@ -149,7 +149,11 @@
       }
     ],
     "copyFiles": {
-      "node_modules/firebase-hackernews/dist/firebase-hackernews-sw.js": "scripts"
+      "node_modules/firebase-hackernews/dist/firebase-hackernews-sw.js": "scripts",
+      "node_modules/firebase/firebase-app.js": "scripts",
+      "node_modules/firebase/firebase-database.js": "scripts",
+      "node_modules/firebase/firebase-app.js.map": "scripts",
+      "node_modules/firebase/firebase-database.js.map": "scripts"
     }
   }
 }
