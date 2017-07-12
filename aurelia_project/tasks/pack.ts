@@ -11,6 +11,7 @@ export default function pack() {
     './scripts/**/*',
     'sw.js',
     'manifest.json',
+    'server.js',
     'workbox-sw.prod.v1.0.1.js'
   ], {base: '.'})
     .pipe(zip(filename))
