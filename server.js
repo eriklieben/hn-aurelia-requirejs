@@ -3,7 +3,7 @@
 const path = require('path');
 const express = require('express');
 const firebase = require('firebase');
-const hackernews = require('../../');
+const hackernews = require('firebase-hackernews');
 
 const server = express()
 const hnservice = hackernews.init(firebase, {
