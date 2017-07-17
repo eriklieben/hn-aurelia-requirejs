@@ -31,15 +31,3 @@
 .meta a {
   text-decoration: underline;
 }
-
-.score {
-  color: #CF5300;
-  font-size: 1.1em;
-  font-weight: 700;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 80px;
-  text-align: center;
-  margin-top: -10px;
-}
