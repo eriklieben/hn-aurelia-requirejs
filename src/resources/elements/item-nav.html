@@ -1,6 +1,6 @@
 <template styles.item-list-nav>
   <require from="./item-nav.css#module"></require>
-  <a href.bind="prev" class="${canGoPrev ? '' : 'disabled'}">&lt; prev</a>
+  <a href.bind="prev" show.bind="canGoPrev">&lt; prev</a>
   ${page} / ${pages}
-  <a href.bind="next" class="${canGoNext ? '' : 'disabled'}">next &gt;</a>
+  <a href.bind="next" show.bind="canGoNext">next &gt;</a>
 </template>

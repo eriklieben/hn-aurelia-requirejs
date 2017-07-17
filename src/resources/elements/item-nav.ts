@@ -1,5 +1,6 @@
-import { bindable, computedFrom } from 'aurelia-framework';
+import { bindable, computedFrom, customElement } from 'aurelia-framework';
 
+@customElement('item-nav')
 export class ItemNavCustomElement {
 
   @bindable()

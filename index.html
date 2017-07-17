@@ -49,7 +49,7 @@
         top: 0;
         width: 100%;
         height: 55px;
-        background-color: #f60;
+        background-color: #CF5300;
       }
       
       .site-header p {
@@ -72,7 +72,7 @@
       .spinner>div {
         width: 20px;
         height: 20px;
-        background-color: #f60;
+        background-color: #CF5300;
         border-radius: 100%;
         display: inline-block;
         -webkit-animation: sk-bouncedelay 1.5s infinite ease-in-out both;
@@ -107,16 +107,13 @@
           })
           .then(function(registration) {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            var scriptElement = document.createElement('script');
-            scriptElement.setAttribute('data-main', 'aurelia-bootstrapper');
-            scriptElement.src = "scripts/vendor-bundle.js";
-            document.body.appendChild(scriptElement);
           }, function(err) {
             console.log('ServiceWorker registration failed: ', err);
           });
       });
     }
   </script>
+  <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
   <noscript>
     you need JavaScript to see this page, sorry.
   </noscript>

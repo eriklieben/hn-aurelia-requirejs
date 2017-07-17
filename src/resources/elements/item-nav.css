@@ -14,11 +14,6 @@
 
 .item-list-nav a {
   margin: 0 1em;
-  text-decoration: none;
-  color: #444;
-}
-
-.item-list-nav :global .disabled {
-  color: #ccc;
-  cursor: not-allowed;
+  text-decoration: underline;
+  color: #333;
 }

@@ -12,7 +12,7 @@ export default function pack() {
     './node_modules/**/*',
     'sw.js',
     'manifest.json',
-    'server.js',
+    'worker.js',
     'workbox-sw.prod.v1.0.1.js'
   ], {base: '.'})
     .pipe(zip(filename))

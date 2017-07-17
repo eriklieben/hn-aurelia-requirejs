@@ -1,28 +1,27 @@
 import { autoinject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
 import DataService from './../services/hn-data-service';
 
 @autoinject()
-export class TopView {
-  public items: Array<any> = [];
+export class Items {
   public page: number = 1;
-  public pages: number = 1;
   public href: string;
   public type: string = '';
   public loading = false;
 
-  constructor(private service: DataService) {
+  constructor(private ea: EventAggregator, public data: DataService) {
   }
 
   public activate(params, navigationInstruction) {
     this.type = navigationInstruction.name;
     this.href = navigationInstruction.href;
     this.page = (params.page) ? Number.parseInt(params.page, 10) : 1;
-
     this.loading = true;
-    this.service.getItems(this.type, this.page).then(result => {
-      this.items = result.items;
-      this.pages = result.totalPages;
+    this.data.getData(this.type);
+
+    this.ea.subscribe('hackernews:data:done', () => {
       this.loading = false;
+      
     });
   }
 }

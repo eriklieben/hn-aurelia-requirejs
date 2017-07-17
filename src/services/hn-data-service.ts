@@ -1,42 +1,37 @@
 import {autoinject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
+import { EventAggregator } from 'aurelia-event-aggregator';
+// import {HttpClient} from 'aurelia-fetch-client';
 
 @autoinject()
 export default class HackerNewsDataService {
 
-  private itemsPerPage = 30;
+  public top = [];
+  public topPages = 1;
+  public 'new' = [];
+  public newPages = 1;
+  public show = [];
+  public showPages = 1;
+  public ask = [];
+  public askPages = 1;
+  public jobs = [];
+  public jobsPages = 1;
 
-  constructor(private http: HttpClient) {
-    http.configure(config => {
-      config
-        .useStandardConfiguration();
+  constructor(private ea: EventAggregator) {
+    ea.subscribe('hackernews:data:update', data => {
+      this[data.type].push(data.item);
+      this[`${data.type}Pages`] = Math.ceil(this[data.type].length / 30);
     });
   }
 
-  public async getItems(type: string, page: number) {
-    const response = await this.http.fetch(`/hackernews/${type}/all`);
-    const items = await response.json();
-    const count = Math.ceil(items.length / this.itemsPerPage);
-    const begin = page > 0 ? (page - 1) * count : 0;
-    const end = page > 0 ? begin + count : items.length;
-    return {
-      totalPages: count,
-      items: items.slice(begin, end)
-    };
+  public getData(type) {
+    if (this[type].length === 0) {
+      this.ea.publish('hackernews:data:get', type);
+    } else {
+      this.ea.publish('hackernews:data:done');
+    }
   }
 
-  public async getUser(username: string) {
-    let response = await this.http.fetch(`/hackernews/user/${username}`);
-    return await response.json();
-  }
-
-  public async getItem(id: number) {
-    let response = await this.http.fetch(`/hackernews/item/${id}`);
-    return await response.json();
-  }
-
-  public async getKids(id: number) {
-    let response = await this.http.fetch(`/hackernews/kids/${id}`);
-    return response.json();
+  public getUser(name) {
+    return null;
   }
 }

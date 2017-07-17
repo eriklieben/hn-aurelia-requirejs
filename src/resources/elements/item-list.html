@@ -1,23 +1,23 @@
-<template bindable="items">
+<template>
   <require from="./item-list.css#module"></require>
   <ul styles.list>
-    <li styles.news-item repeat.for="item of items">
+    <li styles.news-item repeat.for="item of items | page:page">
       <span styles.score>${item.score}</span>
       <span class="title">
-        <template if.bind="item.url">
+        <span if.bind="item.url">
           <a href.bind="item.url" target="_blank" rel="noopener">${item.title}</a>
           <span styles.host>&nbsp;(${item.url | urlToDomain})</span>
-        </template>
-<template if.bind="!item.url">
+        </span>
+        <span if.bind="!item.url">
           ${item.title}
-        </template>
-</span>
-<br>
-<span styles.meta>
+        </span>
+      </span>
+      <br>
+      <span styles.meta>
         <span class="by">by&nbsp;<a href.bind="'/user/' + item.by" class="">${item.by}</a></span>
-<span class="time">&nbsp;${item.time | timeAgo }</span>
-<span class="comments-link">&nbsp;|&nbsp;<a href.bind="'/item/' + item.id">${item.descendants} comments</a></span>
-</span>
-</li>
-</ul>
+        <span class="time">&nbsp;${item.time | timeAgo }</span>
+        <span class="comments-link">&nbsp;|&nbsp;<a href.bind="'/item/' + item.id">${item.descendants} comments</a></span>
+      </span>
+    </li>
+  </ul>
 </template>

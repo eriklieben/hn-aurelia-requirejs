@@ -1,8 +1,7 @@
 <template>
   <require from="./items.css#module"></require>
-  <item-nav page.bind="page" type.bind="href" pages.bind="pages"></item-nav>
-  ${loading}
+  <item-nav if.bind="!loading" page.bind="page" type.bind="href" pages.bind="data[type + 'Pages']"></item-nav>
   <main styles.main>
-    <item-list items.bind="items"></item-list>
+    <item-list if.bind="!loading" page.bind="page" items.bind="data[type]"></item-list>
   </main>
 </template>

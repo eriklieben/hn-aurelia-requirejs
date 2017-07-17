@@ -1,9 +1,4 @@
 importScripts('workbox-sw.prod.v1.0.1.js');
-importScripts('scripts/firebase-app.js')
-importScripts('scripts/firebase-database.js')
-importScripts('scripts/firebase-hackernews-sw.js')
-
-hackernews.init(firebase, { watch: true, log: console.log });
 
 const workboxSW = new self.WorkboxSW();
 workboxSW.precache([]);
