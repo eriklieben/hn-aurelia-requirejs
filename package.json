@@ -66,8 +66,7 @@
     "moment": "^2.18.1",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest",
-    "tslib": "^1.7.1",
-    "whatwg-fetch": "^2.0.3"
+    "tslib": "^1.7.1"
   },
   "peerDependencies": {},
   "devDependencies": {
