@@ -111,6 +111,8 @@
     "tslint": "^3.15.1",
     "typescript": ">=1.9.0-dev || ^2.0.0",
     "uglify-js": "^2.6.3",
-    "vinyl-fs": "^2.4.3"
+    "vinyl-fs": "^2.4.3",
+    "firebase": "^4.1.3",
+    "promise-polyfill": "^6.0.2",
   }
 }

@@ -9,7 +9,6 @@ export default function pack() {
     'web.config',
     'index.html',
     './scripts/**/*',
-    './node_modules/**/*',
     'sw.js',
     'manifest.json',
     'worker.js',
