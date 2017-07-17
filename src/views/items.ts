@@ -21,7 +21,6 @@ export class Items {
 
     this.ea.subscribe('hackernews:data:done', () => {
       this.loading = false;
-      
     });
   }
 }
