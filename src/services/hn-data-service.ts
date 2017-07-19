@@ -1,6 +1,5 @@
 import {autoinject} from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
-// import {HttpClient} from 'aurelia-fetch-client';
 
 @autoinject()
 export default class HackerNewsDataService {
@@ -18,17 +17,13 @@ export default class HackerNewsDataService {
 
   constructor(private ea: EventAggregator) {
     ea.subscribe('hackernews:data:update', data => {
-      this[data.type].push(data.item);
-      this[`${data.type}Pages`] = Math.ceil(this[data.type].length / 30);
+      this[data.type] = data.items;
+      this[`${data.type}Pages`] = data.pages;
     });
   }
 
-  public getData(type) {
-    if (this[type].length === 0) {
-      this.ea.publish('hackernews:data:get', type);
-    } else {
-      this.ea.publish('hackernews:data:done');
-    }
+  public getData(type, page) {
+    this.ea.publish('hackernews:data:get', { type, page });
   }
 
   public getUser(name) {

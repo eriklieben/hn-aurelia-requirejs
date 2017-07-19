@@ -17,7 +17,7 @@ export class Items {
     this.href = navigationInstruction.href;
     this.page = (params.page) ? Number.parseInt(params.page, 10) : 1;
     this.loading = true;
-    this.data.getData(this.type);
+    this.data.getData(this.type, this.page);
 
     this.ea.subscribe('hackernews:data:done', () => {
       this.loading = false;

@@ -1,7 +1,7 @@
 <template>
   <require from="./item-list.css#module"></require>
   <ul styles.list>
-    <li styles.news-item repeat.for="item of items | page:page">
+    <li styles.news-item repeat.for="item of items">
       <span styles.score>${item.score}</span>
       <span class="title">
         <span if.bind="item.url">

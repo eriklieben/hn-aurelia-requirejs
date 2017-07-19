@@ -7,63 +7,43 @@ var db = firebase
   .ref('/v0');
 
 onmessage = event => {
-  console.log('from worker', event);
   if (event.data.message === 'hackernews:data:get') {
-    getStories(event.data.type);
+    getStories(event.data.type, event.data.page);
   }
 };
 
-function getStories(type) {
+function getStories(type, page) {
   db.child(`${type}stories`).once('value', snapshot => {
-    const items = snapshot.val();
-    for (var id of items) {
-      this.db.child(`item/${id}`).once('value', snapshot => {
-        const item = snapshot.val();
-        postMessage({
-          message: 'hackernews:data:update',
-          page: 'story-simple',
-          type: type,
-          item: item
+    const ids = snapshot.val();
+    const start = (page - 1) * 30;
+    const end = page * 30;
+    const range = ids.slice(start, end);
+    console.log('range length', range.length);
+    const pages = Math.ceil(ids.length / 30);
+
+    const promises = [];
+    for (var id of range) {
+      promises.push(new Promise((resolve, reject) => {
+        this.db.child(`item/${id}`).once('value', snapshot => {
+          resolve(snapshot.val());
         });
-      });
+      }));
     }
-    postMessage({
-      message: 'hackernews:data:done'
+
+    Promise.all(promises).then(data => {
+      postMessage({
+        message: 'hackernews:data:update',
+        page: 'story-simple',
+        pages: pages,
+        type: type,
+        items: data
+      });
+      postMessage({
+        message: 'hackernews:data:done'
+      });
+
     });
+
+
   });
 }
-
-
-
-
-// db.child('newstories').on('value', snapshot => {
-//   const items = snapshot.val();
-//   postMessage({
-//     page: 'new',
-//     items: items
-//   });
-// });
-
-// db.child('showstories').on('value', snapshot => {
-//   const items = snapshot.val();
-//   postMessage({
-//     page: 'show',
-//     items: items
-//   });
-// });
-
-// db.child('askstories').on('value', snapshot => {
-//   const items = snapshot.val();
-//   postMessage({
-//     page: 'ask',
-//     items: items
-//   });
-// });
-
-// db.child('jobstories').on('value', snapshot => {
-//   const items = snapshot.val();
-//   postMessage({
-//     page: 'job',
-//     items: items
-//   });
-// });

@@ -22,8 +22,8 @@ export function configure(aurelia: Aurelia) {
     worker.onmessage = event => {
       ea.publish(event.data.message, event.data);
     };
-    ea.subscribe('hackernews:data:get', type => {
-      worker.postMessage({ message: 'hackernews:data:get', type });
+    ea.subscribe('hackernews:data:get', data => {
+      worker.postMessage({ message: 'hackernews:data:get', type: data.type, page: data.page });
     });
   }
 
