@@ -6,14 +6,14 @@ export default function pack() {
   const filename = argv.zipfile ? argv.zipfile : 'pack.zip';
 
   return gulp.src([
-    'web.config',
-    'index.html',
-    './scripts/**/*',
-    'sw.js',
-    'manifest.json',
-    'worker.js',
-    'workbox-sw.prod.v1.0.1.js'
-  ], {base: '.'})
+    'dist/web.config',
+    'dist/index.html',
+    'dist//scripts/**/*',
+    'dist/sw.js',
+    'dist/manifest.json',
+    'dist/worker.js',
+    'dist/workbox-sw.prod.v1.0.1.js'
+  ], {base: 'dist'})
     .pipe(zip(filename))
     .pipe(gulp.dest('.'));
 }

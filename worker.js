@@ -1,5 +1,5 @@
-importScripts('scripts/firebase-app.js');
-importScripts('scripts/firebase-database.js');
+importScripts('/scripts/firebase-app.js');
+importScripts('/scripts/firebase-database.js');
 
 var db = firebase
   .initializeApp({ databaseURL: 'https://hacker-news.firebaseio.com' })

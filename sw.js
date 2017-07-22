@@ -4,11 +4,11 @@ const workboxSW = new self.WorkboxSW();
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "0c4f362927ea4e4f404f69e872a3d96c"
+    "revision": "70bc5277e2943f7f13ac6f5f72201dc8"
   },
   {
     "url": "/scripts/app-bundle.js",
-    "revision": "5a3f30f37b4f7ece28af15bd07013f48"
+    "revision": "38c2e0928c5f13640e913733c5b33f48"
   },
   {
     "url": "/scripts/firebase-app.js",
@@ -25,6 +25,10 @@ workboxSW.precache([
   {
     "url": "/scripts/vendor-bundle.js",
     "revision": "4f8fe28765d3f4249be973eecd74b613"
+  },
+  {
+    "url": "/",
+    "revision": "1ba43fbe197b6124d41cfcd19447615a"
   }
 ]);
 

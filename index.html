@@ -7,8 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
   <link rel="manifest" href="/manifest.json">
-  <link rel="dns-prefetch" href="https://res.cloudinary.com">
-  <link rel="dns-prefetch" href="https://hacker-news.firebaseio.com">
+  <link rel="dns-prefetch" href="//res.cloudinary.com">
+  <link rel="dns-prefetch" href="//hacker-news.firebaseio.com">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="subresource" href="worker.js">
+
   <link rel="canonical" href="https://aurelia-hn.azureedge.net/">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/aurelia/image/upload/w_64,h_64/v1499266334/aurelia-hn.png" />
   <meta name="msapplication-tap-highlight" content="no">
@@ -113,7 +116,7 @@
       });
     }
   </script>
-  <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper" async></script>
+  <script src="/scripts/vendor-bundle.js" data-main="aurelia-bootstrapper" async></script>
   <noscript>
     you need JavaScript to see this page, sorry.
   </noscript>

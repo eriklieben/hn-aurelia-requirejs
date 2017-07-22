@@ -27,3 +27,4 @@ node_modules
 scripts
 
 test/unit/coverage
+dist
