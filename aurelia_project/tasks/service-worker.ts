@@ -30,6 +30,11 @@ export default function serviceWorker() {
             from.push('..' + entry.url);
             to.push(`..${entry.url}?_workbox-precaching=${entry.revision}`);
           }
+
+          if (entry.url === '/worker.js') {
+            from.push('new Worker(\'worker.js\')');
+            to.push(`new Worker('worker.js?_workbox-precaching=${entry.revision}')`);
+          }
           from.push(entry.url);
           to.push(`${entry.url}?_workbox-precaching=${entry.revision}`);
         }
