@@ -11,6 +11,8 @@ import * as eventStream from 'event-stream';
 
 function configureEnvironment() {
   let env = CLIOptions.getEnvironment();
+  
+  console.log('Processing environment: ' + env);
 
   return gulp.src(`aurelia_project/environments/${env}.ts`)
     .pipe(changedInPlace({firstPass:true}))
